@@ -12,7 +12,7 @@
         </select>
         <label class="block mt-4 text-gray-700">Trashed:</label>
         <select v-model="form.trashed" class="form-select mt-1 w-full">
-          <option :value="null" />
+          <option :value="null">All</option>
           <option value="with">With Trashed</option>
           <option value="only">Only Trashed</option>
         </select>

@@ -9,7 +9,7 @@
     {{-- Inertia --}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
 
-    {{-- Ping CRM --}}
+    {{-- CRM --}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
 
     <script src="{{ mix('/js/app.js') }}" defer></script>
@@ -17,5 +17,9 @@
 </head>
 <body class="font-sans leading-none text-gray-700 antialiased">
     @inertia
+
+    @if (app()->isLocal())
+        <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
+    @endif
 </body>
 </html>

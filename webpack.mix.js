@@ -17,6 +17,11 @@ const webpackConfig = require('./webpack.config')
 
 mix
   .js('resources/js/app.js', 'public/js')
+  .disableNotifications()
+  .browserSync({
+    proxy: process.env.APP_URL,
+    open: false,
+  })
   .vue({ runtimeOnly: (process.env.NODE_ENV || 'production') === 'production' })
   .webpackConfig(webpackConfig)
   .postCss('resources/css/app.css', 'public/css', [
@@ -27,3 +32,4 @@ mix
   ])
   .version()
   .sourceMaps()
+
